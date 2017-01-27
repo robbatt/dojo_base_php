@@ -12,6 +12,7 @@ use PHPUnit\Framework\TestCase;
  */
 class DummyTest extends TestCase
 {
+    /** @var Dummy */
     private $dummy;
 
     /**
