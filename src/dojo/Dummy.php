@@ -13,7 +13,7 @@ class Dummy
      */
     public function doIt($num): int
     {
-        return 0;
+        return $num;
     }
 
 
@@ -23,7 +23,7 @@ class Dummy
      */
     public static function doItStatic($num): int
     {
-        return 0;
+        return $num;
     }
 
     /**
@@ -36,5 +36,22 @@ class Dummy
         throw new InvalidArgumentException("TestException");
     }
 
+    /**
+     * @param $num int
+     * @return int
+     */
+    public function doItPartiallyCovered($num): int
+    {
+        if($num > 1) {
+            if($num > 2) {
+                return 3;
+            }
+            return 2;
+        }
+        if($num > 0) {
+            return 1;
+        }
+        return $num;
+    }
 
 }

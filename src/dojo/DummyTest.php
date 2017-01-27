@@ -23,42 +23,54 @@ class DummyTest extends TestCase
         $this->dummy = new Dummy();
     }
 
-    /**
-     * @test
-     */
-    public function shouldDoItAnnotatedOnInstance()
+    /** not annotated, method name begins with test */
+    public function testShouldDoIt()
     {
         Assert::assertEquals(0, $this->dummy->doIt(0),"not equal");
     }
 
-    public function testDoItStatic()
+    /** @test */
+    public function shouldDoItStatic()
     {
-        //$this->markTestSkipped("must be revisited");
-
         Assert::assertNotEquals(1, Dummy::doItStatic(0),"not equal");
     }
 
-    public function testShouldThrowException()
-    {
-        $this->expectException(\InvalidArgumentException::class);
-        Dummy::doThrowException(0);
-    }
-
     /**
+     * @test
      * @dataProvider parameterizedTestProvider
      */
-    public function testParameterized($a, $expected)
+    public function shouldDoItParameterized($a, $expected)
     {
-        $this->assertEquals($expected, $this->dummy->doIt($a));
+        $this->assertEquals($expected, Dummy::doItStatic($a));
     }
 
     public function parameterizedTestProvider()
     {
         return [
             [0, 0],
-            [1, 0],
-            [2, 0],
-            [3, 0]
+            [1, 1],
+            [2, 2]
         ];
     }
+
+    /** @test */
+    public function shouldThrowException()
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        Dummy::doThrowException(0);
+    }
+
+    /** @test */
+    public function shouldBePartiallyCovered()
+    {
+        $this->assertEquals(0, $this->dummy->doItPartiallyCovered(0));
+        $this->assertEquals(1, $this->dummy->doItPartiallyCovered(1));
+    }
+
+    /** @test */
+    public function shouldBeSkipped() {
+        $this->markTestSkipped("must be revisited");
+    }
+
+
 }
