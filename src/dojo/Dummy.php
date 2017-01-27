@@ -2,13 +2,14 @@
 declare(strict_types=1);
 
 namespace dojo;
-use phpDocumentor\Reflection\Types\Integer;
+
+use InvalidArgumentException;
 
 class Dummy
 {
     /**
-     * @param $num Integer
-     * @return Integer
+     * @param $num int
+     * @return int
      */
     public function doIt($num): int
     {
@@ -17,8 +18,8 @@ class Dummy
 
 
     /**
-     * @param $num Integer
-     * @return Integer
+     * @param $num int
+     * @return int
      */
     public static function doItStatic($num): int
     {
@@ -26,13 +27,13 @@ class Dummy
     }
 
     /**
-     * @param $num Integer
-     * @throws \InvalidArgumentException
+     * @param $num int
+     * @throws InvalidArgumentException
      * @return void
      */
     public static function doThrowException($num): void
     {
-        throw new \InvalidArgumentException("TestException");
+        throw new InvalidArgumentException("TestException");
     }
 
 
