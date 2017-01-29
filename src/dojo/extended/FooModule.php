@@ -6,6 +6,7 @@ class FooModule
 {
     public function foo() : string
     {
+        return 'FOO';
     }
 }
 

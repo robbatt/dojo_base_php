@@ -27,11 +27,10 @@ class Extended
     }
 
     /**
-     * @param $num int
      * @throws InvalidArgumentException
      * @return void
      */
-    public static function doThrowException($num): void
+    public static function doThrowException(): void
     {
         throw new InvalidArgumentException("TestException");
     }

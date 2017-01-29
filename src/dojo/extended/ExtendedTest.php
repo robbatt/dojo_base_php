@@ -37,7 +37,7 @@ class ExtendedTest extends TestCase
     public function shouldThrowException()
     {
         $this->expectException(\InvalidArgumentException::class);
-        Extended::doThrowException(0);
+        Extended::doThrowException();
     }
 
     /** @test */
