@@ -19,5 +19,11 @@
     "phpunit/phpunit-mock-objects": "^3.4"
   },
   "require": {
+  },
+  "scripts": {
+    "test": "phpunit --configuration phpunit.xml src",
+    "test-loop": "@php loop-tests.php",
+    "test-reports": "phpunit --configuration phpunit.xml src --coverage-html reports/coverage --log-junit reports/junit_report.xml --testdox-html reports/test_report.html"
+
   }
 }
