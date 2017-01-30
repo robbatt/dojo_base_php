@@ -10,8 +10,13 @@
 
 ## test
 * `php composer.phar test` runs all unit tests under `src`
-* `php composer.phar test-loop` runs tests in loop until cancelled (default: run every 500 milliseconds, modify in `loop-tests.php`)
-* `php composer.phar test-loop | grep Fail` less output for ubuntu/mac
 
 ## coverage / test reports
-* `php composer.phar test-reports` generates coverage and junit test reports
+* `php composer.phar report` generates coverage and junit test reports
+
+## looping tests / coverage reports
+* `php composer.phar loop-test` runs tests in loop until cancelled (default: run every second, modify in `scripts/loop-test.sh/.bat`)
+* `php composer.phar loop-test | grep Fail` less output for ubuntu/mac
+* `php composer.phar loop-report` loops report generation (and test)
+* use a browser plugin to refresh `reports/test_report.html` every second to receive your test status
+* for windows use `loop-win-test.sh` and `loop-win-report.sh`
