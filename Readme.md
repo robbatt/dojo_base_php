@@ -1,7 +1,7 @@
 # Dojo Base Project (PHP)
 
 ## setup
-* install php ([manual](http://php.net/manual/de/install.php))
+* install php 7.0 ([manual](http://php.net/manual/de/install.php))
 * download `composer.phar` ( from [getcomposer.org](https://getcomposer.org/download/))
 * place `composer.phar` in project root
 * run `php composer.phar install`
