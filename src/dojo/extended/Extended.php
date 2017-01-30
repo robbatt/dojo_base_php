@@ -53,4 +53,13 @@ class Extended
         return $num;
     }
 
+    /**
+     * @param $dependency FooModule
+     * @return string
+     */
+    public static function doItOnDependency($dependency) : string
+    {
+        return $dependency->foo();
+    }
+
 }

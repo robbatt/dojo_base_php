@@ -21,7 +21,7 @@ class ExtendedMockTest extends TestCase
         $mock->method('foo')->willReturn('bar');
 
         /** @var FooModule $mock */
-        $this->assertEquals('bar', $mock->foo());
+        $this->assertEquals('bar', Extended::doItOnDependency($mock));
     }
 
 }
