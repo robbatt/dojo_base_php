@@ -1,4 +1,5 @@
 :loop
-    timeout /T 1
+    cls
     php composer.phar report
+    timeout /T 1
 goto loop

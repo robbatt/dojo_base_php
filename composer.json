@@ -24,8 +24,17 @@
   "scripts": {
     "test": "phpunit --configuration phpunit.xml src",
     "report": "phpunit --configuration phpunit.xml src --coverage-html reports/coverage --log-junit reports/junit_report.xml --testdox-html reports/test_report.html",
+    "analyse": "phpcs src -sp --standard=vendor/object-calisthenics/phpcs-calisthenics-rules/src/ObjectCalisthenics/ruleset.xml",
+
+    "loop-test": "scripts/loop-test.sh",
+    "loop-report": "scripts/loop-reports.sh",
+    "loop-analyse": "scripts/loop-analyse.sh",
+    "loop-win-test": "scripts/loop-test.bat",
+    "loop-win-report": "scripts/loop-reports.bat",
+    "loop-win-analyse": "scripts/loop-analyse.bat",
+
     "analyse-noPublicProperties":         "phpcs src -sp --standard=vendor/object-calisthenics/phpcs-calisthenics-rules/src/ObjectCalisthenics/ruleset.xml --sniffs=ObjectCalisthenics.Classes.PropertyVisibility",
-    "analyse-oneArrowPerLine":              "phpcs src -sp --standard=vendor/object-calisthenics/phpcs-calisthenics-rules/src/ObjectCalisthenics/ruleset.xml --sniffs=ObjectCalisthenics.CodeAnalysis.OneObjectOperatorPerLine",
+    "analyse-oneArrowPerLine":            "phpcs src -sp --standard=vendor/object-calisthenics/phpcs-calisthenics-rules/src/ObjectCalisthenics/ruleset.xml --sniffs=ObjectCalisthenics.CodeAnalysis.OneObjectOperatorPerLine",
     "analyse-classArrayPropertyLimit":    "phpcs src -sp --standard=vendor/object-calisthenics/phpcs-calisthenics-rules/src/ObjectCalisthenics/ruleset.xml --sniffs=ObjectCalisthenics.CodeAnalysis.ArrayPropertyPerClassLimit",
     "analyse-classInstancePropertyLimit": "phpcs src -sp --standard=vendor/object-calisthenics/phpcs-calisthenics-rules/src/ObjectCalisthenics/ruleset.xml --sniffs=ObjectCalisthenics.CodeAnalysis.InstancePropertyPerClassLimit",
     "analyse-noElse":                     "phpcs src -sp --standard=vendor/object-calisthenics/phpcs-calisthenics-rules/src/ObjectCalisthenics/ruleset.xml --sniffs=ObjectCalisthenics.ControlStructures.NoElseSniff",
@@ -37,7 +46,7 @@
     "analyse-constantLength":             "phpcs src -sp --standard=vendor/object-calisthenics/phpcs-calisthenics-rules/src/ObjectCalisthenics/ruleset.xml --sniffs=ObjectCalisthenics.NamingConventions.ConstantLength",
     "analyse-functionLength":             "phpcs src -sp --standard=vendor/object-calisthenics/phpcs-calisthenics-rules/src/ObjectCalisthenics/ruleset.xml --sniffs=ObjectCalisthenics.NamingConventions.FunctionLength",
     "analyse-variableLength":             "phpcs src -sp --standard=vendor/object-calisthenics/phpcs-calisthenics-rules/src/ObjectCalisthenics/ruleset.xml --sniffs=ObjectCalisthenics.NamingConventions.VariableLength",
-    "analyse": [
+    "analyse-this": [
       "@analyse-noPublicProperties",
       "@analyse-oneArrowPerLine",
       "@analyse-classArrayPropertyLimit",
@@ -51,11 +60,6 @@
       "@analyse-constantLength",
       "@analyse-functionLength",
       "@analyse-variableLength"
-    ],
-
-    "loop-test": "scripts/loop-test.sh",
-    "loop-report": "scripts/loop-reports.sh",
-    "loop-win-test": "scripts/loop-test.bat",
-    "loop-win-report": "scripts/loop-reports.bat"
+    ]
   }
 }
