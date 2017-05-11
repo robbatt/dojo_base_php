@@ -41,10 +41,10 @@ class Extended
      */
     public function doItPartiallyCovered($num): int
     {
+        if($num > 2) {
+            return 3;
+        }
         if($num > 1) {
-            if($num > 2) {
-                return 3;
-            }
             return 2;
         }
         if($num > 0) {

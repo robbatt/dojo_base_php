@@ -18,7 +18,8 @@ class ExtendedMockTest extends TestCase
 
         /** @var \PHPUnit_Framework_MockObject_MockObject $mock */
         $mock = $this->createMock(FooModule::class);
-        $mock->method('foo')->willReturn('bar');
+        $mockMethod = $mock->method('foo');
+        $mockMethod->willReturn('bar');
 
         /** @var FooModule $mock */
         $this->assertEquals('bar', Extended::doItOnDependency($mock));
