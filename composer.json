@@ -1,6 +1,6 @@
 {
-  "name": "vendor_name/package_name",
-  "description": "description_text",
+  "name": "robbatt/dojo_base_php",
+  "description": "A base project for Coding Dojos",
   "minimum-stability": "stable",
   "license": "proprietary",
   "authors": [
